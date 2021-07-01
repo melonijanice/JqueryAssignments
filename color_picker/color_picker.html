@@ -15,15 +15,20 @@
         }
         $(document).ready(function() {
             $('#large_box').click(function() {
-                alert('you clicked the big box!');
+                $('div').css("background-color", random_color());
+
                 //comment this out when you have figured out what event.stopPropagation is used for
             })
             $('.side_box').click(function(event) {
                 event.stopPropagation();
+                $(this).siblings().css("background-color", random_color());
             })
+
             $('.middle_box').click(function(event) {
-                event.stopPropagation();
+                //event.stopPropagation();
+
             })
+
         });
     </script>
     <style type="text/css">
