@@ -1,0 +1,13 @@
+ mkdir test
+ cd test 
+touch index.html styles.css
+git init
+git add .
+git commit -m "Initial Commit"
+git add index.html
+ git commit -m "Changes made to html"
+ git add styles.css
+ git commit -m "update styles"
+ git log
+ git revert -n 331eeb06002a434905592005991b9a2a00891c73
+ git commit -m "reverted changes"

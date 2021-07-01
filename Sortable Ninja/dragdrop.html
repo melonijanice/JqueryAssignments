@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Draggable + Sortable</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin: 5px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function() {
+            $("#sortable").sortable({
+                revert: true
+            });
+            $("#draggable").draggable({
+                connectToSortable: "#sortable",
+                helper: "clone",
+                revert: "invalid"
+            });
+            $("ul, li").disableSelection();
+        });
+
+        $(document).ready(function() {
+            for (var i = 0; i < 5; i++) {
+                $('ul').append('<li class="ui-state-default"><img src="images/ninja' + i + '.png" data-alt-src="images/ninja' + i + '.png"/></li>');
+                // $('div').append('<img id="imgCat" src="images/ninja' + i + '.png" data-alt-src="images/cat' + i + '.png"/>');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <ul id="sortable">
+
+    </ul>
+
+
+</body>
+
+</html>
